@@ -34,7 +34,7 @@ function App() {
 
     if (getRiskDataValue.isError) {
       return (
-        <div>
+        <div style={{ display:'flex', flexDirection: "column", alignItems: "center" }}>
           <h3>An error occured</h3>
           <button onClick={getRiskDataValue.refetch}>Refresh</button>
         </div>
@@ -42,22 +42,20 @@ function App() {
     }
 
     if (getRiskDataValue.isSuccess) {
-      if (getRiskDataValue.data?.data?.risk) {
         return (
           <div className='risk-breakdown-wrapper'>
             {
-                Object.entries(getRiskDataValue.data?.data?.risk).map(
-                  ([k, v]) => {
-                    if (k !== 'risk_score' && k !== '_id') {
-                      return <DonutValue key={k} valueKey={k} value={v} />
-                    }
-                    return null
+              Object.entries(getRiskDataValue.data?.data?.risk).map(
+                ([k, v]) => {
+                  if (k !== 'risk_score' && k !== '_id') {
+                    return <DonutValue key={k} valueKey={k} value={v} />
                   }
-                )
+                  return null
+                }
+              )
             }
           </div>
         )
-      }
     }
   }
 
