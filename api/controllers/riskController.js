@@ -23,8 +23,6 @@ exports.getAllRisks = async (req, res) => {
 exports.getRisk = async (req, res) => {
   const { risk_score } = req.params
 
-  console.log(req.params)
-
   try {
     const risk = await Risk.findOne({risk_score})
     
