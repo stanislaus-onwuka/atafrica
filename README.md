@@ -20,9 +20,6 @@ After cloning this project, to install the dependencies, run `npm install` (or `
 
 The Robo-Advisor is a web application written using ReactJS on the frontend and Node.js in the backend.
 
-## PRE-REQUISITES
-
-The only pre-requisite to run this app is to have npm and Node.js installed in your machine. For instructions on how to install, go to https://nodejs.org/en/
 
 ## How to run it
 
