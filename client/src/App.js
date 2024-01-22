@@ -24,7 +24,10 @@ function App() {
 
   const getRiskDataValue = useQuery(
     ['risk-data', rangeValue],
-    () => getRiskData(rangeValue)
+    () => {
+      const actualValue = rangeValue !== 0 ? rangeValue/10 : 0
+      return getRiskData(actualValue)
+    }
   )
 
   const renderView = () => {
@@ -41,7 +44,8 @@ function App() {
       )
     }
 
-    if (getRiskDataValue.isSuccess) {
+    if (getRiskDataValue.isSuccess && getRiskDataValue.data?.data?.risk) {
+      console.log(getRiskDataValue.data?.data?.risk)
         return (
           <div className='risk-breakdown-wrapper'>
             {
