@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
+.container{
+  background: url("../public/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  background-color:#FCFCFC;
+  padding: 32px 40px;
+}
+
+nav .logo{
+  font-size: 36px;
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+nav .menu{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav .menu .menu-item-wrapper{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+nav .menu .menu-item{
+  border-radius: 12px;
+  padding: 18px 30px;
+  font-size: 18px;
+}
+
+.bordered{
+  border: 2px solid #000 !important;
+} 
+
+.hero{
+  margin: 90px 4%;
+  font-family: "Inter", sans-serif;
+  max-width: 55%;
+  margin-bottom: 250px;
+}
+
+.hero-title{
+  color: #FCFCFC;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.hero-body{
+  color: #FCFCFC;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */
+  letter-spacing: 0.48px;
+  margin: 32px 0;
+}
+
+.hero-link{
+  border-radius: 12px;
+  border: 2px solid #FCFCFC;
+  text-decoration: none;
+  color: #FCFCFC;
+  padding: 18px 30px;
+}
+
+main{
+  background: #FCFCFC;
+  padding: 56px 0;
+  font-family: "Inter", sans-serif;
+
+}
+
+.risk-calculator-wrapper{
+  padding: 32px;
+  margin: 0 auto 0 auto;
+  max-width: 80%;
+  border-radius: 10px;
+  background: #FCFCFC;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.06);
+}
+
+.risk-calculator-wrapper-title{
+  text-align: center;
+  color: #000;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+
+.slider-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  width: fit-content;
+  gap: 32px;
+  margin: 0 auto;
+}
+
+/* Range slider */
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+  -webkit-appearance: none;
+   appearance: none;
+   background: transparent;
+   cursor: pointer;
+   width: 15rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+ outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #053a5f;
+  border-radius: 0.5rem;
+  height: 0.5rem;  
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+ -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+
+  /*custom styles*/
+  background-color: #5cd5eb;
+  height: 2rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {   
+ border: 1px solid #053a5f;
+ outline: 3px solid #053a5f;
+ outline-offset: 0.125rem; 
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: #053a5f;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+
+  /*custom styles*/
+  background-color: #5cd5eb;
+  height: 2rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+ border: 1px solid #053a5f;
+ outline: 3px solid #053a5f;
+ outline-offset: 0.125rem; 
+}
+
+
+.risk-tolerance-result-value{
+  margin: 36px 0;
+}
+
+.risk-breakdown-wrapper{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  flex-wrap: wrap;
+  gap: 32px;
 }

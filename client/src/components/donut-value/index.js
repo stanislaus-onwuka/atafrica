@@ -1,35 +1,15 @@
-import { useEffect } from 'react'
-import bb, { donut } from "billboard.js";
-import 'billboard.js/dist/billboard.css'
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
-const DonutValue = ({ key, value }) => {
-    const redefinedKey = key
+const DonutValue = ({ valueKey, value }) => {
+  const updatedKey = valueKey.split('_').join(' ')
 
-    useEffect(() => {
-        const donutChartConfig = {
-            data: {
-              columns: [
-                [`"${redefinedKey}"`, value],
-              ],
-              type: donut(),
-            },
-        
-            donut: {
-              title: `${redefinedKey}`
-            },
-        
-            bindto: `#${key}`
-        }
-        
-        bb.generate(donutChartConfig)
-    },[key, redefinedKey, value])
-
-
-    return (
-        <div>
-            <div id={`${key}`}></div>
-        </div>
-    )
+  return (
+    <div style={{ display: "flex", alignItems: "center", flexDirection: "column", width: 150, height: 150 }}>
+      <CircularProgressbar value={value} text={`${value}%`} />
+      <h4 style={{ marginTop: '32px', textTransform: 'capitalize' }}>{updatedKey}</h4>
+    </div>
+  )
 }
 
 export default DonutValue
